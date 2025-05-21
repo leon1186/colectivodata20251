@@ -113,3 +113,12 @@ print(df_nacidos90)
 #print(dataFrameUsuarios.info())
 
 #print(dataFrameUsuarios)
+
+       ######PYTHON COMMANDS#######
+#python -m venv modules // aseguramos installar el VIRTUAL ENVIROMETN
+#pip install -r paquetes.txt
+#pip freeze => para ver si instalamos correctamente los paquetes.
+#pip intall seaborn # un paquete especail para graficas.
+#pip install matplotlib => para graficas en python.
+#pip freeze > paquetes.txt   ===>> especialmetne para actualizar tus librerias puestas en paquetes txt.
+#pip freeze ====>> constantemente para checkear las librearias tal cual como git status.
