@@ -8,17 +8,17 @@ dataFrameAsistencia=pd.read_csv("./data/asistencia_estudiantes_completo.csv")
 colors=["#185db3","#0088d1","#00aecb","#00cfab","#86e883","#f9f871"]
 
 #definimos las figuras primero con matplotlib
-'''
+
 plt.figure(figsize=(8,5))# base x altura
 
 sns.countplot(x='estado',data=dataFrameAsistencia,palette=colors)
 plt.title("cantidad de registros por estados de asistencia")
 plt.xlabel("Estado de Asistencia")
 plt.ylabel("cantidad de registros")
-plt.tight_layout
+plt.tight_layout()
 plt.show()
 
-'''
+
 #GRAFICA DE TORTA
 #sirve para mostrar proporciones entre columnas del dataframe(proporcion de estudiantes x medio de trasnporte)
 
@@ -39,19 +39,16 @@ plt.show()
 #SE APLICA CUANDO HAGO CRUCES EN EL DATAFRAME
 #con el size creamos una matriz  en este caso asistir , no asistio con , moto, a pie,moto
 #cuando tengo un cruce creando una matriz tengo que contruilro en lista cpara que sea un solo vector
-conteoEstadoMedioTranporte=dataFrameAsistencia.groupby(['estado','medio_transporte']).size().unstack(fill_value=0)
+conteoEstadoMedioTransporte=dataFrameAsistencia.groupby(['estado','medio_transporte']).size().unstack(fill_value=0)
 
-conteoEstadoMedioTranporte.plot(
-
+conteoEstadoMedioTransporte.plot(
     kind='bar',
     figsize=(10,6),
-    color=colors,
-
+    color=colors
 )
-
-plt.title("registras por estado de asistencia y medio de trasnporte")
-plt.xlabel("estado de asitencia")
-plt.ylabel("cantidad de registros")
-plt.legend(title="medio trasnporte")
+plt.title("Registros por estado de asistencia y medios de transporte")
+plt.xlabel("Esatdo de asistencia")
+plt.ylabel("Cantidad de registros")
+plt.legend(title="Medio de transporte")
 plt.tight_layout()
-plt.show
+plt.show()
